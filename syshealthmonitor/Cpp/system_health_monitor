@@ -78,6 +78,20 @@ int main() {
     std::cout << "Active Processes: " << activeProcesses << std::endl;
     std::cout << "------------------------" << std::endl;
 
+    // Send email alerts if thresholds are exceeded
+    if (cpuUsage > cpuThreshold) {
+        sendEmailAlert("CPU Usage Alert", "CPU usage exceeded " + std::to_string(cpuThreshold) + "%");
+    }
+    if (memoryUsage > memoryThreshold) {
+        sendEmailAlert("Memory Usage Alert", "Memory usage exceeded " + std::to_string(memoryThreshold) + "%");
+    }
+    if (diskSpaceUsage > diskSpaceThreshold) {
+        sendEmailAlert("Disk Space Alert", "Disk space usage exceeded " + std::to_string(diskSpaceThreshold) + "%");
+    }
+    if (activeProcesses > activeProcessesThreshold) {
+        sendEmailAlert("Active Processes Alert", "Active processes exceeded " + std::to_string(activeProcessesThreshold));
+    }
 
+    return 0;
    
 }
