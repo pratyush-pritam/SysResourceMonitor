@@ -78,6 +78,7 @@ int main() {
     std::cout << "Active Processes: " << activeProcesses << std::endl;
     std::cout << "------------------------" << std::endl;
 
+
     // Send email alerts if thresholds are exceeded
     if (cpuUsage > cpuThreshold) {
         sendEmailAlert("CPU Usage Alert", "CPU usage exceeded " + std::to_string(cpuThreshold) + "%");
@@ -93,5 +94,4 @@ int main() {
     }
 
     return 0;
-   
 }
